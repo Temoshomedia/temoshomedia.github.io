@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Receptionist — Temosho Media</title>
-<meta name="description" content="Temosho Media AI monitors the parts of your customer service that aren't covered 24/7: phone, email, reminders and newsletters. 30-day paid trial for $200, then $350/month.">
+<title>Temosho Media Administrative AI</title>
+<meta name="description" content="Temosho Media Administrative AI monitors the parts of your customer service that aren't covered 24/7: phone, email, reminders and newsletters. 30-day paid trial for $200, then $350/month.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lexend:wght@500;700&family=Manrope:wght@600;800&family=Outfit:wght@500;700&family=Plus+Jakarta+Sans:wght@600;800&family=Poppins:wght@500;700&family=Sora:wght@500;700&family=Space+Grotesk:wght@500;700&family=Urbanist:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lexend:wght@500;700&family=Manrope:wght@600;800&family=Outfit:wght@500;700&family=Plus+Jakarta+Sans:wght@600;800&family=Poppins:wght@500;700&family=Rubik:wght@500;700&family=Sora:wght@500;700&family=Space+Grotesk:wght@500;700&family=Urbanist:wght@600;800&display=swap" rel="stylesheet">
 <script>if(/[?&]thanks=1/.test(location.search)){document.documentElement.classList.add("is-thanks");document.title="Thank You \u2014 Temosho Media";}</script>
 <style>
   :root{--black:#07090f; --night:#0b1220; --navy:#0b1b3a; --royal:#1d4ed8; --blue:#2563eb; --sky:#5b9bff; --ice:#eaf1ff; --white:#fff;
@@ -118,15 +118,17 @@
   .lt-status{min-height:1.3em; margin-top:10px; font-family:var(--mono); font-size:0.72rem; color:var(--sky); text-align:center;}
   /* what AI can do */
   section.ai{--h:'Sora',sans-serif; background:var(--black); padding:96px 0;}
-  .ai-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:20px;}
-  .aic{grid-column:span 2; background:#0f1729; border:1px solid var(--dline); border-radius:22px; padding:32px 28px;}
-  .aic:nth-child(4), .aic:nth-child(5){grid-column:span 3;}
-  @media(max-width:900px){.aic, .aic:nth-child(4), .aic:nth-child(5){grid-column:span 3;} .aic:last-child{grid-column:1 / -1;}}
-  @media(max-width:600px){.aic, .aic:nth-child(4), .aic:nth-child(5){grid-column:1 / -1;}}
+  .ai-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media(max-width:860px){.ai-grid{grid-template-columns:1fr;}}
+  .aic{background:#0f1729; border:1px solid var(--dline); border-radius:22px; padding:32px 28px;}
   .aic-ico{width:50px; height:50px; border-radius:14px; background:rgba(37,99,235,0.22); display:flex; align-items:center; justify-content:center; margin-bottom:20px;}
   .aic-ico svg{width:24px; height:24px; stroke:var(--sky); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
   .aic h3{font-size:1.2rem; line-height:1.25; margin-bottom:10px;}
   .aic p{margin:0; color:var(--dm); font-size:0.96rem;}
+  .ai-dash{display:flex; align-items:center; gap:18px; max-width:820px; margin:26px auto 0; background:rgba(37,99,235,0.14); border:1px solid rgba(91,155,255,0.45); border-radius:20px; padding:20px 24px;}
+  .ai-dash-ico{flex:none; width:46px; height:46px; border-radius:12px; background:rgba(37,99,235,0.35); display:flex; align-items:center; justify-content:center;}
+  .ai-dash-ico svg{width:22px; height:22px; stroke:#fff; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
+  .ai-dash p{margin:0; color:#e6ecf8; font-size:1rem;} .ai-dash b{color:#fff;}
   .ai-cta{max-width:820px; margin:60px auto 0; text-align:center; background:var(--blue); border-radius:28px; padding:50px 32px;}
   .ai-cta h3{font-size:clamp(1.5rem,3vw,2rem); margin-bottom:12px;}
   .ai-cta p{margin:0 auto 26px; max-width:580px; color:#e3ecff; font-size:1.02rem;}
@@ -163,6 +165,27 @@
   .faq-grid summary::after{content:"+"; font-family:var(--mono); font-size:1.3rem; color:var(--blue); flex:none; transition:transform .2s;}
   .faq-grid details[open] summary::after{transform:rotate(45deg);}
   .faq-grid p{margin:12px 0 0; color:var(--muted); font-size:0.96rem;}
+  /* limits */
+  section.limits{--h:'Rubik',sans-serif; background:var(--navy); padding:96px 0;}
+  .lim-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:1040px; margin:0 auto;}
+  @media(max-width:860px){.lim-grid{grid-template-columns:1fr;}}
+  .lim{border-radius:24px; padding:34px 30px;}
+  .lim.no{background:var(--black); border:1px solid var(--dline);}
+  .lim.yes{background:#fff; color:var(--text);}
+  .lim h3{font-size:1.5rem; margin-bottom:18px;}
+  .lim.yes h3{color:var(--royal);}
+  .lim ul{list-style:none; margin:0; padding:0;}
+  .lim li{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid rgba(255,255,255,0.12);}
+  .lim.yes li{border-top-color:var(--line);}
+  .lim li:first-child{border-top:none; padding-top:0;}
+  .lim li svg{flex:none; width:20px; height:20px; margin-top:2px; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+  .lim.no li svg{stroke:#8ea0c4;} .lim.yes li svg{stroke:var(--blue);}
+  .lim li b{display:block; font-size:1rem; margin-bottom:2px;}
+  .lim li span{font-size:0.92rem; color:var(--dm);} .lim.yes li span{color:var(--muted);}
+  .lim-chips{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; max-width:1040px; margin:34px auto 0;}
+  .lim-k{font-family:var(--mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sky); margin-right:6px;}
+  .lim-chips span:not(.lim-k){font-size:0.86rem; color:#e6ecf8; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.05); border-radius:40px; padding:8px 16px;}
+  .lim-close{text-align:center; margin:34px auto 0; max-width:640px; font-family:var(--h); font-weight:700; font-size:clamp(1.2rem,2.4vw,1.6rem);}
   /* live demo */
   section.live{--h:'Outfit',sans-serif; background:var(--navy); padding:90px 0; text-align:center;}
   .vsl-frame{max-width:880px; margin:0 auto; aspect-ratio:16/9; border-radius:20px; overflow:hidden; background:#000; box-shadow:0 30px 70px rgba(11,27,58,0.3);}
@@ -323,9 +346,9 @@
     <div class="hero-grid">
       <div>
         <div class="eyebrow">AI Customer Support Service Solutions</div>
-        <h1>Is your team <em>understaffed</em> to handle all the customer support related tasks because of high volume of calls and messages?</h1>
-        <p class="hero-lead">Get Temosho Media AI to solve that. It watches the parts of your customer service nobody has time to monitor, like the midday rush, busy lines and after hours, so no inquiry or consultation goes unanswered.</p>
-        <p class="hero-sub">It works around the clock and backs up your team. It doesn&rsquo;t replace them.</p>
+        <h1>How many inquiries &amp; consultations does your team <em>leave unanswered every month</em> because of high volume of calls and messages?</h1>
+        <p class="hero-lead">A client support service with areas that aren&rsquo;t monitored 24/7 creates an operational inefficiency, and burns out your team when they&rsquo;re understaffed.</p>
+        <p class="hero-sub">Get Temosho Media Administrative AI to monitor those areas around the clock. It backs up your team. It doesn&rsquo;t replace them.</p>
         <div class="hero-actions">
           <a class="btn btn-blue" href="#book">Schedule a Free Consultation</a>
           <a class="btn btn-line" href="#how">See How It Works</a>
@@ -344,7 +367,7 @@
           </div>
           <div class="demo-panel">
             <div class="call m" style="--d:0s">
-              <div class="call-av">YB</div><div class="call-name">Your Business</div>
+              <div class="call-av">C</div><div class="call-name">Caller</div>
               <div class="call-status">AI receptionist answering &middot; 00:14</div>
               <div class="call-lines">
                 <div class="cl m" style="--d:.5s"><small>Caller</small>I&rsquo;d like to book a consultation.</div>
@@ -366,8 +389,8 @@
             <div class="pcap"><p>Sends your monthly newsletter, promotions and seasonal offers to past customers, on autopilot.</p></div>
           </div>
           <div class="demo-panel">
-            <div class="sms sys m" style="--d:0s">Booked: Thursday 10:00 at Your Business.</div>
-            <div class="sms ai m" style="--d:.8s">Hi Sam, a reminder of your appointment tomorrow at 10:00. Reply 1 to confirm or 2 to reschedule.</div>
+            <div class="sms sys m" style="--d:0s">Thursday appointment booked at 10am.</div>
+            <div class="sms ai m" style="--d:.8s">Hi Sam, a reminder of your appointment tomorrow at 10am. Reply 1 to confirm or 2 to reschedule.</div>
             <div class="sms me m" style="--d:1.6s">1</div>
             <div class="sms sys m" style="--d:2.2s">Confirmed. See you tomorrow!</div>
             <span class="tagline m" style="--d:2.7s">Reminder sent automatically, on time</span>
@@ -391,20 +414,19 @@
 <section class="ai dark" id="what">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">What it can do</div>
-      <h2>What Temosho Media AI Can Do For Your Business</h2>
-      <p>Stop losing leads to missed calls, slow replies, missed inquiries during peak midday hours, and repetitive admin. Whether you run a clinic, law firm, dealership, restaurant, hotel, or home service business, our AI works 24/7 to keep your operations moving:</p>
+      <div class="eyebrow">What it can be used for</div>
+      <h2>What Temosho Media Administrative AI Can Be Used For</h2>
+      <p>Any part of your client support that isn&rsquo;t monitored 24/7 is a gap, including the midday rush when your team is stretched. Temosho Media Administrative AI covers it.</p>
     </div>
     <div class="ai-grid">
-      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Instant 24/7 Lead Response</h3><p>Automatically reply to new inquiries across WhatsApp, social media DMs, email, and website chat within seconds—before leads move on to a competitor.</p></div>
-      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></div><h3>Multi-Line AI Voice Receptionist</h3><p>Answer multiple incoming phone calls simultaneously. Our AI speaks naturally with callers to answer FAQs, qualify leads, and book appointments without putting anyone on hold.</p></div>
-      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M6 3v3M18 3v3M4 8h16"/><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M9 14l2 2 4-4"/></svg></div><h3>Automated Appointment &amp; Booking Reminders</h3><p>Schedule and send timely SMS, WhatsApp, or email reminders to drastically reduce no-shows and last-minute cancellations.</p></div>
-      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M4 5h13a2 2 0 012 2v12H6a2 2 0 01-2-2zM19 9h2v8a2 2 0 01-2 2M8 9h7M8 13h7"/></svg></div><h3>Automated Newsletters &amp; Promotions</h3><p>Keep past customers coming back with targeted email campaigns, seasonal offers, and updates sent on autopilot.</p></div>
-      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><path d="M14 4v4M8 10v4M16 16v4"/></svg></div><h3>Custom Automated Workflows</h3><p>Have a unique operational bottleneck? We design and build tailored AI automations around your exact business processes upon request.</p></div>
+      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Auto Reply to New Inquiries &amp; Consultations</h3><p>Reply instantly to new inquiries &amp; consultations received through your social media inbox, email inbox, website chat/booking form and phone calls.</p></div>
+      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M6 3v3M18 3v3M4 8h16"/><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M9 14l2 2 4-4"/></svg></div><h3>Auto Set &amp; Send Appointment Reminders</h3><p>Set up and send appointment reminders on time.</p></div>
+      <div class="aic"><div class="aic-ico"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><path d="M14 4v4M8 10v4M16 16v4"/></svg></div><h3>Custom Automated Workflows</h3><p>Other custom automated workflows, built for you upon request.</p></div>
     </div>
+    <div class="ai-dash"><div class="ai-dash-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div><p><b>One dashboard.</b> All automations are built &amp; managed from a single dashboard, with no multiple logins needed during setup.</p></div>
     <div class="ai-cta">
-      <h3>Ready to put your daily operations on autopilot?</h3>
-      <p>Book a free discovery call today to see which automations will save you the most time and revenue.</p>
+      <h3>Want these automations in your business?</h3>
+      <p>Book a free consultation to set them up, or to have a custom automated workflow built for you.</p>
       <a class="btn btn-white" href="#book">Get Started</a>
     </div>
   </div>
@@ -469,11 +491,27 @@
   </div>
 </section>
 
+<section class="limits dark" id="limits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Honest limits</div>
+      <h2>What Temosho Media Administrative AI doesn&rsquo;t do.</h2>
+      <p>It backs up your team. It doesn&rsquo;t replace it. Here&rsquo;s where it stops, and where your team steps in.</p>
+    </div>
+    <div class="lim-grid">
+      <div class="lim no"><h3>It can&rsquo;t</h3><ul><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Give professional advice</b><span>No legal, medical or financial advice. It takes the details and hands the matter to a person.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Handle emergencies</b><span>Urgent matters are flagged to your team. Anyone in danger should still contact emergency services.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Make decisions or promises</b><span>No refunds, discounts, exceptions or prices beyond what you&rsquo;ve approved.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Know what you haven&rsquo;t told it</b><span>If information is missing or out of date, it can&rsquo;t answer well. It&rsquo;s set to hand over rather than guess, but it can still get things wrong.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Hear everything perfectly</b><span>Noisy lines and strong accents can cause mistakes, so names and numbers should be confirmed on callback.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><div><b>Close deals or settle disputes</b><span>It captures and qualifies inquiries. Your people build trust and close.</span></div></li></ul></div>
+      <div class="lim yes"><h3>Your team steps up to</h3><ul><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Call back quickly</b><span>Summaries only help if someone acts on them. A slow callback still loses the lead.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Take the handovers</b><span>Sensitive, urgent and complex matters come straight to a person.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Keep the information current</b><span>Hours, prices, services and policies change. Tell us when they do.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Check the work</b><span>Review summaries now and then, and tell us what to improve.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Confirm the details</b><span>Check names, numbers and spelling when you call back.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Set the rules</b><span>Decide what it may answer, what always goes to a person, and what callers must be told, such as that they&rsquo;re speaking to an AI or being recorded.</span></div></li></ul></div>
+    </div>
+    <div class="lim-chips"><span class="lim-k">Good to know</span><span>Call capacity depends on your phone line and plan</span><span>Usage costs grow with your inquiry volume</span><span>Needs call forwarding set up on your number</span><span>Answers are only as good as the information it has</span></div>
+    <p class="lim-close">Think of it as a very reliable first responder. Your team is still the professional.</p>
+  </div>
+</section>
+
 <section class="why dark" id="why">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Why hire Temosho Media AI</div>
-      <h2>Why hire Temosho Media AI?</h2>
+      <div class="eyebrow">Why hire Temosho Media Administrative AI</div>
+      <h2>Why hire Temosho Media Administrative AI?</h2>
       <p>Your team can&rsquo;t be everywhere at peak hours or after closing. Temosho Media builds the AI that covers those gaps, so no inquiry goes unanswered.</p>
     </div>
     <div class="why-grid">
@@ -598,7 +636,7 @@
       <h2>Start with a 30-day trial.</h2>
     </div>
     <div class="fees">
-      <div class="fee a"><div class="fee-label">30-day paid trial</div><div class="fee-amt">$200</div><p class="fee-note">Get access to Temosho Media AI and automate the customer service tasks that aren&rsquo;t currently monitored.</p></div>
+      <div class="fee a"><div class="fee-label">30-day paid trial</div><div class="fee-amt">$200</div><p class="fee-note">Get access to Temosho Media Administrative AI and automate the customer service tasks that aren&rsquo;t currently monitored.</p></div>
       <div class="fee b"><div class="fee-label">After 30 days</div><div class="fee-amt">$350<small>/month</small></div><p class="fee-note">Stop the service, or continue for just $350 a month.</p></div>
     </div>
     <p class="price-text"><b>Schedule a free consultation</b> to set up your 30-day paid trial. API costs, based on the inquiries you receive, are estimated for your business on the call. Extras like reminders, newsletters and custom workflows are quoted there too.</p>
@@ -614,7 +652,7 @@
       <p>Tell us about your business and pick a time. Your free consultation is on Zoom.</p>
     </div>
     <form class="form-card" id="consult" action="https://formsubmit.co/temosho.media@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New consultation request — Temosho Media AI">
+      <input type="hidden" name="_subject" value="New consultation request — Temosho Media Administrative AI">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://temoshomedia.org/?thanks=1">
